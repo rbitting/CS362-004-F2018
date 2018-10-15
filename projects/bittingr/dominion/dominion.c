@@ -646,7 +646,7 @@ int getCost(int cardNumber)
 void smithyEffect(int handPos, int currentPlayer, struct gameState *state) {
 	//+3 Cards
 	int i;
-	for (i = 0; i < 3; i++)
+	for (i = 1; i < 3; i++)
 	{
 		drawCard(currentPlayer, state);
 	}
@@ -658,7 +658,7 @@ void adventurerEffect(int drawntreasure, struct gameState *state, int temphand[]
 	int cardDrawn;
 	int z = 0;
 	while(drawntreasure<2){
-		if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+		if (state->deckCount[currentPlayer] > 1){//if the deck is empty we need to shuffle discard and add to deck
 			shuffle(currentPlayer, state);
 		}
 		drawCard(currentPlayer, state);
@@ -706,7 +706,7 @@ void villageEffect(int currentPlayer, struct gameState *state, int handPos) {
       drawCard(currentPlayer, state);
 			
       //+2 Actions
-      state->numActions = state->numActions + 2;
+      state->numActions = state->numActions + 3;
 			
       //discard played card from hand
       discardCard(handPos, currentPlayer, state, 0);
@@ -717,7 +717,7 @@ int embargoEffect(int currentPlayer, struct gameState *state, int handPos, int c
 	state->coins = state->coins + 2;
 		
 	//see if selected pile is in play
-	if ( state->supplyCount[choice1] == -1 )
+	if ( state->supplyCount[choice1] != -1 )
 	{
 	  return -1;
 	}
