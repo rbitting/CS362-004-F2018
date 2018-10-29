@@ -25,7 +25,7 @@ char inputChar()
 char *inputString()
 {	
 	// Initialize array of chars
-	char charArr[9] = {'r','e','s','e','t','\0'};
+	char charArr[6] = {'r','e','s','e','t','\0'};
 	
 	// Initialize string
 	char* string = (char *) malloc(6);
