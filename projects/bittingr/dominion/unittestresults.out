@@ -1,0 +1,67 @@
+----------------- UNIT TEST 1: isGameOver() ----------------
+3 out of 3 tests passed.
+File 'unittest1.c'
+Lines executed:86.96% of 23
+Creating 'unittest1.c.gcov'
+
+
+----------------- UNIT TEST 2: getCost() ----------------
+29 out of 29 tests passed.
+File 'unittest2.c'
+Lines executed:76.23% of 122
+Creating 'unittest2.c.gcov'
+
+----------------- UNIT TEST 3: initializeGame() ----------------
+5 out of 5 tests passed.
+File 'unittest3.c'
+Lines executed:79.17% of 24
+Creating 'unittest3.c.gcov'
+
+----------------- UNIT TEST 4: newGame() ----------------
+2 out of 2 test passed.
+File 'unittest4.c'
+Lines executed:84.62% of 13
+Creating 'unittest4.c.gcov'
+
+----------------- CARD TEST 1: Smithy ----------------
+hand count = 6, expected = 7
+deck count = 3, expected = 2
+Hand counts match? FAILED
+Deck counts match? FAILED
+File 'cardtest1.c'
+Lines executed:83.33% of 30
+Creating 'cardtest1.c.gcov'
+
+----------------- CARD TEST 2: Adventurer ----------------
+hand count = 7, expected = 6
+deck count = 2, expected = 3
+coins = 4, expected = greater than 4
+Hand counts match? FAILED
+Deck counts match? FAILED
+Coin count has increased? FAILED
+File 'cardtest2.c'
+Lines executed:93.33% of 30
+Creating 'cardtest2.c.gcov'
+
+----------------- CARD TEST 3: Village ----------------
+hand count = 5, expected = 5
+deck count = 4, expected = 4
+actions = 4, expected = 3
+Hand counts match? PASSED
+Deck counts match? PASSED
+Number of actions match? FAILED
+File 'cardtest3.c'
+Lines executed:90.00% of 30
+Creating 'cardtest3.c.gcov'
+
+----------------- CARD TEST 4: Embargo ----------------
+hand count = 5, expected = 4
+deck count = 5, expected = 5
+embargo tokens on smithy = 0, expected = 1
+Hand counts match? FAILED
+Deck counts match? PASSED
+Embargo tokens on smithy match? FAILED
+File 'cardtest4.c'
+Lines executed:89.29% of 28
+Creating 'cardtest4.c.gcov'
+
