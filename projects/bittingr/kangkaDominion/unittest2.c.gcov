@@ -1,0 +1,388 @@
+        -:    0:Source:unittest2.c
+        -:    0:Graph:unittest2.gcno
+        -:    0:Data:unittest2.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/* 	Unit Test 2 - getCost()
+        -:    2:	
+        -:    3:	Rachel Bitting
+        -:    4:	10/24/2018
+        -:    5:*/
+        -:    6:
+        -:    7:
+        -:    8:#include "dominion.h"
+        -:    9:#include <stdio.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include <assert.h>
+        -:   12:#include <stdio.h>
+        -:   13:#include <stdlib.h>
+        -:   14:#include <string.h>
+        -:   15:#include <math.h> 
+        -:   16:
+        -:   17:int getCost(int cardNumber);
+        -:   18:
+function main called 1 returned 100% blocks executed 76%
+        1:   19:int main(int argc, char* argv[]) {
+        1:   20:	int successCount = 0; 	// Keep track of successes
+        1:   21:	int total_count = 0;	// Keep track of total tests
+        -:   22:	
+        1:   23:	printf("----------------- UNIT TEST 2: getCost() ----------------\n");
+call    0 returned 100%
+        -:   24:	
+        -:   25:	// Check every card for correct cost
+        -:   26:	
+        1:   27:	if (getCost(curse) != 0) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   28:		printf("Curse cost is incorrect.\n");
+call    0 never executed
+        -:   29:	}
+        -:   30:	else {
+        1:   31:		successCount++;
+        -:   32:	}
+        1:   33:	total_count++;
+        -:   34:	
+        1:   35:	if (getCost(estate) != 2) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   36:		printf("Estate cost is incorrect.\n");
+call    0 never executed
+        -:   37:	}
+        -:   38:	else {
+        1:   39:		successCount++;
+        -:   40:	}
+        1:   41:	total_count++;
+        -:   42:	
+        1:   43:	if (getCost(duchy) != 5) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   44:		printf("Duchy cost is incorrect.\n");
+call    0 never executed
+        -:   45:	}
+        -:   46:	else {
+        1:   47:		successCount++;
+        -:   48:	}
+        1:   49:	total_count++;
+        -:   50:	
+        1:   51:	if (getCost(province) != 8) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   52:		printf("Province cost is incorrect.\n");
+call    0 never executed
+        -:   53:	}
+        -:   54:	else {
+        1:   55:		successCount++;
+        -:   56:	}
+        1:   57:	total_count++;
+        -:   58:	
+        1:   59:	if (getCost(copper) != 0) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   60:		printf("Copper cost is incorrect.\n");
+call    0 never executed
+        -:   61:	}
+        -:   62:	else {
+        1:   63:		successCount++;
+        -:   64:	}
+        1:   65:	total_count++;
+        -:   66:	
+        1:   67:	if (getCost(silver) != 3) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   68:		printf("Silver cost is incorrect.\n");
+call    0 never executed
+        -:   69:	}
+        -:   70:	else {
+        1:   71:		successCount++;
+        -:   72:	}
+        1:   73:	total_count++;
+        -:   74:	
+        1:   75:	if (getCost(gold) != 6) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   76:		printf("Gold cost is incorrect.\n");
+call    0 never executed
+        -:   77:	}
+        -:   78:	else {
+        1:   79:		successCount++;
+        -:   80:	}
+        1:   81:	total_count++;
+        -:   82:	
+        1:   83:	if (getCost(adventurer) != 6) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   84:		printf("Adventurer cost is incorrect.\n");
+call    0 never executed
+        -:   85:	}
+        -:   86:	else {
+        1:   87:		successCount++;
+        -:   88:	}
+        1:   89:	total_count++;
+        -:   90:	
+        1:   91:	if (getCost(council_room) != 5) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:   92:		printf("Council Room cost is incorrect.\n");
+call    0 never executed
+        -:   93:	}
+        -:   94:	else {
+        1:   95:		successCount++;
+        -:   96:	}
+        1:   97:	total_count++;
+        -:   98:	
+        1:   99:	if (getCost(council_room) != 5) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  100:		printf("Council Room cost is incorrect.\n");
+call    0 never executed
+        -:  101:	}
+        -:  102:	else {
+        1:  103:		successCount++;
+        -:  104:	}
+        1:  105:	total_count++;
+        -:  106:	
+        1:  107:	if (getCost(feast) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  108:		printf("Feast cost is incorrect.\n");
+call    0 never executed
+        -:  109:	}
+        -:  110:	else {
+        1:  111:		successCount++;
+        -:  112:	}
+        1:  113:	total_count++;
+        -:  114:	
+        1:  115:	if (getCost(gardens) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  116:		printf("Gardens cost is incorrect.\n");
+call    0 never executed
+        -:  117:	}
+        -:  118:	else {
+        1:  119:		successCount++;
+        -:  120:	}
+        1:  121:	total_count++;
+        -:  122:	
+        1:  123:	if (getCost(mine) != 5) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  124:		printf("Mine cost is incorrect.\n");
+call    0 never executed
+        -:  125:	}
+        -:  126:	else {
+        1:  127:		successCount++;
+        -:  128:	}
+        1:  129:	total_count++;
+        -:  130:	
+        1:  131:	if (getCost(remodel) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  132:		printf("Remodal cost is incorrect.\n");
+call    0 never executed
+        -:  133:	}
+        -:  134:	else {
+        1:  135:		successCount++;
+        -:  136:	}
+        1:  137:	total_count++;
+        -:  138:	
+        1:  139:	if (getCost(smithy) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  140:		printf("Smithy cost is incorrect.\n");
+call    0 never executed
+        -:  141:	}
+        -:  142:	else {
+        1:  143:		successCount++;
+        -:  144:	}
+        1:  145:	total_count++;
+        -:  146:	
+        1:  147:	if (getCost(village) != 3) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  148:		printf("Village cost is incorrect.\n");
+call    0 never executed
+        -:  149:	}
+        -:  150:	else {
+        1:  151:		successCount++;
+        -:  152:	}
+        1:  153:	total_count++;
+        -:  154:	
+        1:  155:	if (getCost(baron) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  156:		printf("Baron cost is incorrect.\n");
+call    0 never executed
+        -:  157:	}
+        -:  158:	else {
+        1:  159:		successCount++;
+        -:  160:	}
+        1:  161:	total_count++;
+        -:  162:	
+        1:  163:	if (getCost(great_hall) != 3) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  164:		printf("Great Hall cost is incorrect.\n");
+call    0 never executed
+        -:  165:	}
+        -:  166:	else {
+        1:  167:		successCount++;
+        -:  168:	}
+        1:  169:	total_count++;
+        -:  170:	
+        1:  171:	if (getCost(minion) != 5) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  172:		printf("Minion cost is incorrect.\n");
+call    0 never executed
+        -:  173:	}
+        -:  174:	else {
+        1:  175:		successCount++;
+        -:  176:	}
+        1:  177:	total_count++;
+        -:  178:	
+        1:  179:	if (getCost(steward) != 3) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  180:		printf("Steward cost is incorrect.\n");
+call    0 never executed
+        -:  181:	}
+        -:  182:	else {
+        1:  183:		successCount++;
+        -:  184:	}
+        1:  185:	total_count++;
+        -:  186:	
+        1:  187:	if (getCost(tribute) != 5) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  188:		printf("Tribute cost is incorrect.\n");
+call    0 never executed
+        -:  189:	}
+        -:  190:	else {
+        1:  191:		successCount++;
+        -:  192:	}
+        1:  193:	total_count++;
+        -:  194:	
+        1:  195:	if (getCost(ambassador) != 3) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  196:		printf("Ambassador cost is incorrect.\n");
+call    0 never executed
+        -:  197:	}
+        -:  198:	else {
+        1:  199:		successCount++;
+        -:  200:	}
+        1:  201:	total_count++;
+        -:  202:	
+        1:  203:	if (getCost(cutpurse) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  204:		printf("Cutpurse cost is incorrect.\n");
+call    0 never executed
+        -:  205:	}
+        -:  206:	else {
+        1:  207:		successCount++;
+        -:  208:	}
+        1:  209:	total_count++;
+        -:  210:	
+        1:  211:	if (getCost(embargo) != 2) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  212:		printf("Embargo cost is incorrect.\n");
+call    0 never executed
+        -:  213:	}
+        -:  214:	else {
+        1:  215:		successCount++;
+        -:  216:	}
+        1:  217:	total_count++;
+        -:  218:	
+        1:  219:	if (getCost(outpost) != 5) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  220:		printf("Outpost cost is incorrect.\n");
+call    0 never executed
+        -:  221:	}
+        -:  222:	else {
+        1:  223:		successCount++;
+        -:  224:	}
+        1:  225:	total_count++;
+        -:  226:	
+        1:  227:	if (getCost(salvager) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  228:		printf("Salvager cost is incorrect.\n");
+call    0 never executed
+        -:  229:	}
+        -:  230:	else {
+        1:  231:		successCount++;
+        -:  232:	}
+        1:  233:	total_count++;
+        -:  234:	
+        1:  235:	if (getCost(sea_hag) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  236:		printf("Sea Hag cost is incorrect.\n");
+call    0 never executed
+        -:  237:	}
+        -:  238:	else {
+        1:  239:		successCount++;
+        -:  240:	}
+        1:  241:	total_count++;
+        -:  242:	
+        1:  243:	if (getCost(treasure_map) != 4) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  244:		printf("Treasure Map is incorrect.\n");
+call    0 never executed
+        -:  245:	}
+        -:  246:	else {
+        1:  247:		successCount++;
+        -:  248:	}
+        1:  249:	total_count++;
+        -:  250:	
+        1:  251:	if (getCost(90) != -1) {
+call    0 returned 100%
+branch  1 taken 0% (fallthrough)
+branch  2 taken 100%
+    #####:  252:		printf("Invalid card did not return -1.\n");
+call    0 never executed
+        -:  253:	}
+        -:  254:	else {
+        1:  255:		successCount++;
+        -:  256:	}
+        1:  257:	total_count++;
+        -:  258:	
+        -:  259:  
+        -:  260:	// Print final results
+        1:  261:	printf("%i out of %i tests passed.\n", successCount, total_count);
+call    0 returned 100%
+        -:  262:
+        1:  263:	return 0;
+        -:  264:}

@@ -1,0 +1,109 @@
+        -:    0:Source:randomtestcard1.c
+        -:    0:Graph:randomtestcard1.gcno
+        -:    0:Data:randomtestcard1.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/* 	Random Test 1 - Smithy
+        -:    2:	
+        -:    3:	Rachel Bitting
+        -:    4:	11/14/2018
+        -:    5:	
+        -:    6:*/
+        -:    7:
+        -:    8:#include "dominion.h"
+        -:    9:#include <stdio.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include <assert.h>
+        -:   12:#include <stdio.h>
+        -:   13:#include <stdlib.h>
+        -:   14:#include <string.h>
+        -:   15:#include <math.h> 
+        -:   16:#include <time.h>
+        -:   17:
+        -:   18:#define TESTS_TO_RUN 2000
+        -:   19:#define SMITHY_CARDS_ADDED 3
+        -:   20:#define DISCARDED 1
+        -:   21:
+        -:   22:int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);
+        -:   23:
+function assertTrue called 4000 returned 100% blocks executed 71%
+     4000:   24:void assertTrue(int a, int b, int operator, char* string) {
+        -:   25:	// If operator is true, check that a is greater than b instead of equal to
+     4000:   26:	if ((a > b && operator == 1) || (a == b && operator != 1)) {
+branch  0 taken 51% (fallthrough)
+branch  1 taken 49%
+branch  2 taken 100% (fallthrough)
+branch  3 taken 0%
+branch  4 taken 0% (fallthrough)
+branch  5 taken 100%
+branch  6 never executed
+branch  7 never executed
+    #####:   27:		printf("%s PASSED\n", string);
+call    0 never executed
+        -:   28:	}
+        -:   29:	else {
+     4000:   30:		printf("%s FAILED\n", string);
+call    0 returned 100%
+        -:   31:	}
+     4000:   32:}
+        -:   33:
+function main called 1 returned 100% blocks executed 100%
+        1:   34:int main(int argc, char* argv[]) {
+        -:   35:	// Use current time as seed for random generator 
+        1:   36:    srand(time(0));
+call    0 returned 100%
+call    1 returned 100%
+        -:   37:	
+        1:   38:	printf("**************** randomtestcard1.c - Testing Smithy ****************\n");
+call    0 returned 100%
+        -:   39:	
+        -:   40:	// Initialize variables
+        1:   41:    int handpos = 0, choice1 = -1, choice2 = -1, choice3 = -1, bonus = 0; 
+        1:   42:    int thisPlayer = 0;
+        1:   43:    int shuffledCards = 0;
+        -:   44:	int numOfPlayers, seed, i;
+        1:   45:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   46:	
+     2001:   47:	for (i=0;i<TESTS_TO_RUN;i++) {
+branch  0 taken 99%
+branch  1 taken 1% (fallthrough)
+        -:   48:		struct gameState G, testG;
+        -:   49:		
+        -:   50:		// Get random vals for number of players and seed
+     2000:   51:		numOfPlayers = (rand() % (MAX_PLAYERS - 2)) + 2;	//Get a random number between 2 and max players
+call    0 returned 100%
+     2000:   52:		seed = rand()+1;	// Seed should be a minimum of 1
+call    0 returned 100%
+        -:   53:		
+        -:   54:		// Initialize a game state and player cards
+     2000:   55:		initializeGame(numOfPlayers, k, seed, &G);
+call    0 returned 100%
+        -:   56:		
+        -:   57:		// Assign random vals for these hand, deck, and discard counts 	(consts defined in dominion.h)
+     2000:   58:		G.handCount[thisPlayer] = rand() % MAX_HAND;
+call    0 returned 100%
+     2000:   59:		G.deckCount[thisPlayer] = rand() % MAX_DECK;
+call    0 returned 100%
+     2000:   60:		G.discardCount[thisPlayer] = MAX_DECK - G.deckCount[thisPlayer];
+        -:   61:		
+        -:   62:		// copy the game state to a test case
+     2000:   63:		memcpy(&testG, &G, sizeof(struct gameState));
+     2000:   64:		cardEffect(smithy, choice1, choice2, choice3, &testG, handpos, &bonus);
+call    0 returned 100%
+        -:   65:		
+        -:   66:		// Hand should have 3 cards added after playing Smithy
+     2000:   67:		printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] + SMITHY_CARDS_ADDED - DISCARDED);
+call    0 returned 100%
+        -:   68:		
+        -:   69:		// Deck should have 3 less than before card play
+     2000:   70:		printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] - SMITHY_CARDS_ADDED + shuffledCards);
+call    0 returned 100%
+        -:   71:		
+     2000:   72:		assertTrue(testG.handCount[thisPlayer],G.handCount[thisPlayer] + SMITHY_CARDS_ADDED - DISCARDED, 0, "Hand counts match?");
+call    0 returned 100%
+     2000:   73:		assertTrue(testG.deckCount[thisPlayer],G.deckCount[thisPlayer] - SMITHY_CARDS_ADDED + shuffledCards, 0, "Deck counts match?");
+call    0 returned 100%
+        -:   74:	}
+        -:   75:	
+        1:   76:	return 0;
+        -:   77:}

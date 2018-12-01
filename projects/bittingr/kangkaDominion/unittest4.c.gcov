@@ -1,0 +1,60 @@
+        -:    0:Source:unittest4.c
+        -:    0:Graph:unittest4.gcno
+        -:    0:Data:unittest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/* 	Unit Test 4 - newGame()
+        -:    2:	
+        -:    3:	Rachel Bitting
+        -:    4:	10/25/2018
+        -:    5:	
+        -:    6:*/
+        -:    7:
+        -:    8:#include "dominion.h"
+        -:    9:#include <stdio.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include <assert.h>
+        -:   12:#include <stdio.h>
+        -:   13:#include <stdlib.h>
+        -:   14:#include <string.h>
+        -:   15:#include <math.h> 
+        -:   16:
+function main called 1 returned 100% blocks executed 82%
+        1:   17:int main(int argc, char* argv[]) {
+        1:   18:	int successCount = 0;
+        1:   19:	int TOTAL_COUNT = 2;
+        -:   20:	
+        1:   21:	struct gameState* game = newGame();
+call    0 returned 100%
+        -:   22:	
+        1:   23:	printf("----------------- UNIT TEST 4: newGame() ----------------\n");
+call    0 returned 100%
+        -:   24:	
+        -:   25:	/*** Test 1 ***/
+        1:   26:	if (game != NULL) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   27:		successCount++;
+        -:   28:	}
+        -:   29:	else {
+    #####:   30:		printf("Test failed. newGame() returned null.\n");
+call    0 never executed
+        -:   31:	}
+        -:   32:	
+        -:   33:	/*** Test 2 ***/
+        1:   34:	if (game->numPlayers == 0) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        1:   35:		successCount++;
+        -:   36:	}
+        -:   37:	else {
+    #####:   38:		printf("Test failed. gameState variables not initialized.\n");
+call    0 never executed
+        -:   39:	}
+        -:   40:	
+        -:   41:	// Print final results
+        1:   42:	printf("%i out of %i test passed.\n", successCount, TOTAL_COUNT);
+call    0 returned 100%
+        -:   43:	
+        1:   44:	return 0;
+        -:   45:}

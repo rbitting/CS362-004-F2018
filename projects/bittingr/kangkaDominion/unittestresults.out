@@ -1,0 +1,7 @@
+----------------- CARD TEST 2: Adventurer ----------------
+hand count = 6, expected = 6
+deck count = 4, expected = 3
+coins = 4, expected = greater than 4
+Hand counts match? PASSED
+Deck counts match? FAILED
+Coin count has increased? FAILED

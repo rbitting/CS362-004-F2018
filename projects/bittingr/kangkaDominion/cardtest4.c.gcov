@@ -1,0 +1,104 @@
+        -:    0:Source:cardtest4.c
+        -:    0:Graph:cardtest4.gcno
+        -:    0:Data:cardtest4.gcda
+        -:    0:Runs:1
+        -:    0:Programs:1
+        -:    1:/* 	Card Test 3 - Embargo
+        -:    2:	
+        -:    3:	Rachel Bitting
+        -:    4:	10/28/2018
+        -:    5:	
+        -:    6:	+2 coins. Trash this. Add an Embargo token to a Supply pile. (For the rest of the game, when a player buys a card from that pile, they gain a Curse.)
+        -:    7:	
+        -:    8:*/
+        -:    9:
+        -:   10:#include "dominion.h"
+        -:   11:#include <stdio.h>
+        -:   12:#include <stdlib.h>
+        -:   13:#include <assert.h>
+        -:   14:#include <stdio.h>
+        -:   15:#include <stdlib.h>
+        -:   16:#include <string.h>
+        -:   17:#include <math.h> 
+        -:   18:
+        -:   19:int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus);
+        -:   20:
+function assertTrue called 3 returned 100% blocks executed 44%
+        3:   21:void assertTrue(int a, int b, int operator, char* string) {
+        -:   22:	// Operator boolean signals to check for greater than
+        3:   23:	if (operator == 1) {
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+    #####:   24:		if (a > b) {
+branch  0 never executed
+branch  1 never executed
+    #####:   25:			printf("%s PASSED\n", string);
+call    0 never executed
+        -:   26:		}
+        -:   27:		else {
+    #####:   28:			printf("%s FAILED\n", string);
+call    0 never executed
+        -:   29:		}
+        -:   30:	}
+        -:   31:	// Otherwise check for match
+        -:   32:	else {
+        3:   33:		if (a == b) {
+branch  0 taken 100% (fallthrough)
+branch  1 taken 0%
+        3:   34:			printf("%s PASSED\n", string);
+call    0 returned 100%
+        -:   35:		}
+        -:   36:		else {
+    #####:   37:			printf("%s FAILED\n", string);
+call    0 never executed
+        -:   38:		}
+        -:   39:	}
+        3:   40:}
+        -:   41:
+function main called 1 returned 100% blocks executed 100%
+        1:   42:int main(int argc, char* argv[]) {
+        1:   43:    int discarded = 1;
+        1:   44:    int shuffledCards = 0;
+        -:   45:
+        1:   46:    int handpos = 0, choice1 = smithy, choice2 = -1, choice3 = -1, bonus = 0; 
+        1:   47:    int seed = 1000;
+        1:   48:    int numPlayers = 2;
+        1:   49:    int thisPlayer = 0;
+        -:   50:	struct gameState G, testG;
+        1:   51:	int k[10] = {adventurer, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy, council_room};
+        -:   52:
+        -:   53:	// initialize a game state and player cards
+        1:   54:	initializeGame(numPlayers, k, seed, &G);
+call    0 returned 100%
+        -:   55:
+        -:   56:
+        -:   57:	// ----------- CARD TEST 4: Testing Embargo (+2 coins) --------------
+        1:   58:	printf("----------------- CARD TEST 4: Embargo ----------------\n");
+call    0 returned 100%
+        -:   59:
+        -:   60:	// copy the game state to a test case
+        1:   61:	memcpy(&testG, &G, sizeof(struct gameState));
+        1:   62:	cardEffect(embargo, choice1, choice2, choice3, &testG, handpos, &bonus);
+call    0 returned 100%
+        -:   63:	
+        -:   64:	// Hand should have 1 card added after playing Embargo
+        1:   65:	printf("hand count = %d, expected = %d\n", testG.handCount[thisPlayer], G.handCount[thisPlayer] - discarded);
+call    0 returned 100%
+        -:   66:	
+        -:   67:	// Deck should have 1 less than before card play
+        1:   68:	printf("deck count = %d, expected = %d\n", testG.deckCount[thisPlayer], G.deckCount[thisPlayer] + shuffledCards);
+call    0 returned 100%
+        -:   69:	
+        -:   70:	// Embargo on choice1 (smithy) should be increased by 1
+        1:   71:	printf("embargo tokens on smithy = %i, expected = %i\n", testG.embargoTokens[choice1], G.embargoTokens[choice1] + 1);
+call    0 returned 100%
+        -:   72:	
+        1:   73:	assertTrue(testG.handCount[thisPlayer], G.handCount[thisPlayer] - discarded, 0, "Hand counts match?");
+call    0 returned 100%
+        1:   74:	assertTrue(testG.deckCount[thisPlayer], G.deckCount[thisPlayer] + shuffledCards, 0, "Deck counts match?");
+call    0 returned 100%
+        1:   75:	assertTrue(testG.embargoTokens[choice1], G.embargoTokens[choice1] + 1, 0, "Embargo tokens on smithy match?");
+call    0 returned 100%
+        -:   76:	
+        1:   77:	return 0;
+        -:   78:}
